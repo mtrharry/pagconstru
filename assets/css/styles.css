@@ -1,17 +1,66 @@
-:root{
-  --brand:#0d6efd; /* azul Bootstrap; cambia si tienes colores corporativos */
+:root{ --brand:#0d6efd; }
+
+html{ scroll-behavior:smooth; }
+body{
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
 }
 
-html { scroll-behavior: smooth; }
-body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; }
+/* Navbar limpio y alineado */
+.navbar .nav-link{ padding:.5rem .75rem; }
+.navbar .btn{ border-radius:.7rem; }
 
-#hero { background: #f8fafc; }
-.stat { }
-.stat-number { font-size: 1.75rem; font-weight: 700; color: var(--brand); }
-.stat-label { color: #6c757d; }
+/* Marca truncada para que no empuje el menú */
+.navbar-brand{
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
 
-.navbar .btn { border-radius: .6rem; }
-.card { border: 0; border-radius: .9rem; }
-img.rounded-3 { border-radius: 1rem !important; }
+/* Botón hamburguesa visible solo en móvil (ya está con d-lg-none) */
+.navbar-toggler{ border:0; }
+.navbar-toggler:focus{ box-shadow:none; }
 
-footer { background: #fff; }
+/* Oculta la barra CTA móvil en pantallas grandes */
+@media (min-width: 576px){
+  .mobile-cta{ display:none; }
+}
+
+
+/* Hero */
+#hero{ background:#f8fafc; }
+@media (max-width:576px){
+  .display-5{ font-size:1.9rem; line-height:1.2; }
+  .lead{ font-size:1rem; }
+  #hero .btn-lg{ padding:.8rem 1rem; font-size:1rem; }
+  .navbar-brand{ font-size:1rem; max-width:70%; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+}
+
+/* Cards e imágenes */
+.card{ border:0; border-radius:1rem; }
+img.rounded-3{ border-radius:1rem!important; }
+
+/* CTA móvil inferior */
+.mobile-cta{
+  position:fixed; bottom:0; left:0; right:0;
+  display:flex; gap:.5rem; padding:.5rem .75rem;
+  background:rgba(255,255,255,.95);
+  border-top:1px solid #e5e7eb; z-index:1050;
+}
+.mobile-cta .btn{ padding:.8rem 1rem; border-radius:.9rem; font-weight:600; }
+
+/* Botón flotante WhatsApp (≥ sm) */
+.fab-whatsapp{
+  position:fixed; right:18px; bottom:18px;
+  width:56px; height:56px; border-radius:50%;
+  background:#25D366; color:#fff; font-size:14px; font-weight:700;
+  display:flex; align-items:center; justify-content:center; text-decoration:none;
+  box-shadow:0 6px 20px rgba(37,211,102,.4); z-index:1050;
+}
+
+/* Evitar que la barra móvil tape el footer */
+@media (max-width:576px){ body{ padding-bottom:76px; } }
+
+/* Accesibilidad */
+a:focus,button:focus,.btn:focus{ outline:2px solid #0d6efd; outline-offset:2px; }
+
+/* Badges clientes */
+.badge.text-bg-light{ border:1px solid #e5e7eb; border-radius:.8rem; }
