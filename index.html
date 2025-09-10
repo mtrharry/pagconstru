@@ -8,7 +8,6 @@
   <link rel="icon" href="assets/img/favicon.png" />
   <link rel="canonical" href="https://harryruiz35.github.io/" />
 
-  <!-- Open Graph / Twitter -->
   <meta property="og:title" content="Construcciones Michael Angel Ruiz" />
   <meta property="og:description" content="Obras de vialidad y pavimentos con garantía. Cotiza por WhatsApp." />
   <meta property="og:type" content="website" />
@@ -16,13 +15,15 @@
   <meta property="og:image" content="https://harryruiz35.github.io/assets/img/og-hero.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- Bootstrap + estilos -->
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
   <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/styles.css" />
 
-  <!-- JSON-LD -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -44,44 +45,36 @@
 </head>
 
 <body>
-  <!-- Navbar -->
+  <a href="#hero" class="visually-hidden-focusable">Saltar al contenido principal</a>
+
   <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom sticky-top">
     <div class="container">
-      <!-- Brand -->
       <a class="navbar-brand fw-semibold text-truncate" href="#hero" style="max-width:60%">
         Construcciones Michael Angel Ruiz
       </a>
-
-      <!-- Toggler móvil -->
       <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
         aria-controls="mainNav" aria-expanded="false" aria-label="Menú">
         <span class="navbar-toggler-icon"></span>
       </button>
-
-      <!-- Menú -->
       <div class="collapse navbar-collapse" id="mainNav">
         <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
           <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
           <li class="nav-item"><a class="nav-link" href="#proyectos">Proyectos</a></li>
           <li class="nav-item"><a class="nav-link" href="#clientes">Clientes</a></li>
           <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
-          <!-- CTA desktop -->
           <li class="nav-item d-none d-lg-block">
             <a class="btn btn-primary ms-lg-2" href="#contacto">Pide tu presupuesto</a>
           </li>
         </ul>
       </div>
-
-      <!-- CTA móvil corto -->
       <a class="btn btn-primary d-lg-none ms-2" href="#contacto">Cotiza</a>
     </div>
   </nav>
 
-  <!-- Hero -->
   <header id="hero" class="py-5 bg-light">
     <div class="container">
       <div class="row align-items-center g-4">
-        <div class="col-lg-6">
+        <div class="col-lg-6" data-aos="fade-right">
           <h1 class="display-5 fw-bold">Pavimentos y obras de vialidad con garantía</h1>
           <p class="lead mb-3">
             Instalación de soleras, baldosas, soletillas, base estabilizada y canchas de hormigón. Lavado y pulido profesional.
@@ -96,8 +89,7 @@
             <a href="#proyectos" class="btn btn-outline-secondary btn-lg flex-fill">Ver proyectos</a>
           </div>
         </div>
-        <div class="col-lg-6">
-          <!-- Imagen hero (solo JPEG para evitar fallos de formatos) -->
+        <div class="col-lg-6" data-aos="fade-left">
           <img
             class="img-fluid rounded-3 shadow-sm"
             src="assets/img/hero-vereda.jpeg?v=1"
@@ -108,37 +100,38 @@
     </div>
   </header>
 
-  <!-- Servicios -->
   <section id="servicios" class="py-5">
     <div class="container">
-      <h2 class="h1 text-center mb-4">Servicios</h2>
-      <p class="text-center text-muted mb-5">Obras de vialidad, pavimentos y soluciones en hormigón.</p>
+      <div data-aos="fade-up">
+        <h2 class="h1 text-center mb-4">Servicios</h2>
+        <p class="text-center text-muted mb-5">Obras de vialidad, pavimentos y soluciones en hormigón.</p>
+      </div>
       <div class="row g-4">
-        <div class="col-md-4">
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
           <div class="card h-100 shadow-sm"><div class="card-body">
             <h3 class="h5">Instalación de soleras y soletillas</h3>
             <p class="mb-0">Colocación precisa y alineada de soleras, soletillas y elementos de delimitación vial.</p>
           </div></div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
           <div class="card h-100 shadow-sm"><div class="card-body">
             <h3 class="h5">Pavimentos y baldosas</h3>
             <p class="mb-0">Instalación de baldosas y pavimentos en espacios públicos, áreas recreativas y urbanizaciones.</p>
           </div></div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
           <div class="card h-100 shadow-sm"><div class="card-body">
             <h3 class="h5">Base estabilizada y reparaciones</h3>
             <p class="mb-0">Ejecución de bases estabilizadas, reparaciones en calzadas y mantenimiento preventivo.</p>
           </div></div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
           <div class="card h-100 shadow-sm"><div class="card-body">
             <h3 class="h5">Canchas de hormigón</h3>
             <p class="mb-0">Construcción de canchas deportivas en hormigón resistente, listas para alto tráfico.</p>
           </div></div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
           <div class="card h-100 shadow-sm"><div class="card-body">
             <h3 class="h5">Lavado y pulido de hormigón</h3>
             <p class="mb-0">Limpieza profunda y pulido para extender la vida útil del hormigón y mejorar su apariencia.</p>
@@ -148,30 +141,31 @@
     </div>
   </section>
 
-  <!-- Proyectos -->
   <section id="proyectos" class="py-5 bg-light">
     <div class="container">
-      <h2 class="h1 text-center mb-4">Proyectos realizados</h2>
-      <p class="text-center text-muted mb-5">Algunas obras recientes. Pide más referencias por interno.</p>
+      <div data-aos="fade-up">
+        <h2 class="h1 text-center mb-4">Proyectos realizados</h2>
+        <p class="text-center text-muted mb-5">Algunas obras recientes. Pide más referencias por interno.</p>
+      </div>
       <div class="row g-4">
-        <div class="col-6 col-md-4">
-          <a href="assets/img/proy1.jpeg?v=1" target="_blank" rel="noopener">
+        <div class="col-6 col-md-4" data-aos="zoom-in">
+          <a href="assets/img/proy1.jpeg" data-lightbox="proyectos" data-title="Vereda terminada con soleras">
             <img class="img-fluid rounded-3 shadow-sm"
                  src="assets/img/proy1.jpeg?v=1"
                  alt="Vereda terminada con soleras - Proyecto 1"
                  loading="lazy" width="800" height="600" />
           </a>
         </div>
-        <div class="col-6 col-md-4">
-          <a href="assets/img/proy2.jpeg?v=1" target="_blank" rel="noopener">
+        <div class="col-6 col-md-4" data-aos="zoom-in" data-aos-delay="100">
+          <a href="assets/img/proy2.jpeg" data-lightbox="proyectos" data-title="Instalación de baldosas en ejecución">
             <img class="img-fluid rounded-3 shadow-sm"
                  src="assets/img/proy2.jpeg?v=1"
                  alt="Instalación de baldosas en ejecución - Proyecto 2"
                  loading="lazy" width="800" height="600" />
           </a>
         </div>
-        <div class="col-6 col-md-4">
-          <a href="assets/img/proy3.jpeg?v=1" target="_blank" rel="noopener">
+        <div class="col-6 col-md-4" data-aos="zoom-in" data-aos-delay="200">
+          <a href="assets/img/proy3.jpeg" data-lightbox="proyectos" data-title="Detalle de terminación de pavimento">
             <img class="img-fluid rounded-3 shadow-sm"
                  src="assets/img/proy3.jpeg?v=1"
                  alt="Detalle de terminación de pavimento - Proyecto 3"
@@ -182,24 +176,48 @@
     </div>
   </section>
 
-  <!-- Clientes -->
   <section id="clientes" class="py-5">
     <div class="container">
-      <h2 class="h1 text-center mb-4">Clientes y Colaboraciones</h2>
-      <p class="text-center text-muted mb-4">Municipios, empresas y comunidades.</p>
-      <ul class="list-unstyled d-flex flex-wrap justify-content-center gap-4">
-        <li class="badge text-bg-light p-3 shadow-sm">Municipalidad de Ejemplo</li>
-        <li class="badge text-bg-light p-3 shadow-sm">Constructora XYZ</li>
-        <li class="badge text-bg-light p-3 shadow-sm">Comunidad Vecinal ABC</li>
-      </ul>
+      <div data-aos="fade-up">
+        <h2 class="h1 text-center mb-4">Nuestros Clientes Opinan</h2>
+        <p class="text-center text-muted mb-5">Confianza y resultados que hablan por sí solos.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="card h-100">
+            <div class="card-body text-center d-flex flex-column justify-content-center">
+              <p class="fst-italic">"Un trabajo impecable y entregado en el plazo acordado. Totalmente recomendados para cualquier obra vial."</p>
+              <p class="fw-bold mb-0 mt-auto">Ana González</p>
+              <small class="text-muted">Comunidad Vecinal ABC</small>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="card h-100">
+            <div class="card-body text-center d-flex flex-column justify-content-center">
+              <p class="fst-italic">"La calidad del pavimento es excelente. Resolvieron todas nuestras dudas durante el proceso con gran profesionalismo."</p>
+              <p class="fw-bold mb-0 mt-auto">Carlos Soto</p>
+              <small class="text-muted">Constructora XYZ</small>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="card h-100">
+            <div class="card-body text-center d-flex flex-column justify-content-center">
+              <p class="fst-italic">"La nueva cancha de hormigón quedó perfecta. Nuestros vecinos están felices. ¡Gran trabajo!"</p>
+              <p class="fw-bold mb-0 mt-auto">Javier Pérez</p>
+              <small class="text-muted">Municipalidad de Ejemplo</small>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Contacto -->
   <section id="contacto" class="py-5 bg-light">
     <div class="container">
       <div class="row g-4">
-        <div class="col-lg-6">
+        <div class="col-lg-6" data-aos="fade-right">
           <h2 class="h1 mb-3">Contacto</h2>
           <p class="text-muted">Cuéntanos tu proyecto y te contactamos a la brevedad.</p>
           <ul class="list-unstyled">
@@ -209,7 +227,7 @@
           <div class="mt-4 small text-muted">*Al enviar aceptas nuestra política de privacidad.</div>
         </div>
 
-        <div class="col-lg-6">
+        <div class="col-lg-6" data-aos="fade-left">
           <form action="https://formspree.io/f/mandlggo" method="POST" class="card shadow-sm p-4 bg-white" id="contact-form">
             <div class="mb-3">
               <label class="form-label">Nombre</label>
@@ -232,26 +250,11 @@
             <button type="submit" class="btn btn-primary">Enviar</button>
             <div class="form-text mt-2" id="form-status" role="status" aria-live="polite"></div>
           </form>
-
-          <script>
-          const form = document.getElementById('contact-form');
-          const statusEl = document.getElementById('form-status');
-          form.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const data = new FormData(form);
-            try {
-              const r = await fetch(form.action, { method: form.method, body: data, headers: { 'Accept': 'application/json' } });
-              if (r.ok) { form.reset(); statusEl.textContent = '¡Gracias! Te contactaremos a la brevedad.'; }
-              else { statusEl.textContent = 'Hubo un problema. Intenta nuevamente o escribe por WhatsApp.'; }
-            } catch { statusEl.textContent = 'Sin conexión. Intenta más tarde.'; }
-          });
-          </script>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer class="py-4 border-top">
     <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
       <div class="small text-muted">
@@ -260,11 +263,18 @@
     </div>
   </footer>
 
-  <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 
-  <!-- CTA fija móvil -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800, // Duración de la animación en ms
+      once: true     // La animación ocurre solo una vez
+    });
+  </script>
+
   <div class="mobile-cta d-sm-none">
     <a href="tel:+56955156123" class="btn btn-dark flex-fill" id="cta-call">📞 Llamar</a>
     <a href="https://wa.me/56955156123?text=Hola,%20quisiera%20cotizar%20una%20obra" class="btn btn-success flex-fill d-flex align-items-center justify-content-center gap-2" id="cta-wa" style="font-weight:600;">
@@ -279,7 +289,6 @@
     [wa, call].forEach(el => el && el.addEventListener('click', () => {}));
   </script>
 
-  <!-- Botón flotante WhatsApp -->
   <a href="https://wa.me/56955156123?text=Hola,%20quisiera%20cotizar%20una%20obra" class="fab-whatsapp d-none d-sm-flex" aria-label="WhatsApp"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
   <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
 </svg></a>

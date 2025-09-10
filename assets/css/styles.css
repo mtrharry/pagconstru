@@ -64,3 +64,33 @@ a:focus,button:focus,.btn:focus{ outline:2px solid #0d6efd; outline-offset:2px; 
 
 /* Badges clientes */
 .badge.text-bg-light{ border:1px solid #e5e7eb; border-radius:.8rem; }
+
+
+/* --- ✅ NUEVO: Micro-interacciones y mejoras visuales --- */
+
+/* Transición suave para elementos interactivos */
+.btn, .nav-link, .card, .fab-whatsapp {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Efecto al pasar el cursor sobre botones y enlaces del menú */
+.btn:hover, .nav-link:hover {
+  transform: translateY(-2px); /* Mueve el elemento ligeramente hacia arriba */
+}
+
+/* Efecto hover para las tarjetas */
+.card:hover {
+  transform: scale(1.03); /* Hace la tarjeta un poco más grande */
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15) !important;
+}
+
+/* Efecto hover para el botón de WhatsApp */
+.fab-whatsapp:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(37,211,102,.5);
+}
+
+/* Mejora de contraste para accesibilidad */
+.text-muted {
+  color: #6c757d !important; /* Un gris estándar con buen contraste */
+}
