@@ -1,3 +1,23 @@
+/* Iconos de proyectos en cards tipo botón */
+.project-btn-icon {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  background: #f1f3f6;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  display: block;
+  margin: 0 auto 0.5rem auto;
+  padding: 10px;
+  border: 1.5px solid #e0e3e8;
+  transition: box-shadow 0.2s;
+}
+.btn-outline-primary:active .project-btn-icon,
+.btn-outline-primary:focus .project-btn-icon,
+.btn-outline-primary:hover .project-btn-icon {
+  box-shadow: 0 4px 16px rgba(13,110,253,0.10);
+  border-color: #0d6efd33;
+}
 /* --- PALETA DE COLORES Y VARIABLES --- */
 :root {
   --bs-primary: #0ea5e9;      /* Azul claro principal (cielo) */
