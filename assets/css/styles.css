@@ -1,98 +1,205 @@
-:root{ --brand:#0d6efd; }
-
-html{ scroll-behavior:smooth; }
-body{
-  font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+/* --- PALETA DE COLORES Y VARIABLES --- */
+:root {
+  --bs-primary: #0ea5e9;      /* Azul claro principal (cielo) */
+  --bs-primary-dark: #1e3a8a; /* Azul oscuro (noche) */
+  --bs-light: #f8fafc;        /* Fondo claro (casi blanco) */
+  --bs-dark: #334155;         /* Texto oscuro */
+  --bs-success: #198754;      /* Verde para WhatsApp */
+  --bs-body-font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --bs-body-color: var(--bs-dark);
 }
 
-/* Navbar limpio y alineado */
-.navbar .nav-link{ padding:.5rem .75rem; }
-.navbar .btn{ border-radius:.7rem; }
-
-/* Marca truncada para que no empuje el menú */
-.navbar-brand{
-  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+/* --- ESTILOS GENERALES --- */
+body {
+  scroll-behavior: smooth;
+  overflow-x: hidden; /* Previene el scroll horizontal accidental */
 }
 
-/* Botón hamburguesa visible solo en móvil (ya está con d-lg-none) */
-.navbar-toggler{ border:0; }
-.navbar-toggler:focus{ box-shadow:none; }
+.btn-primary {
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
+}
+.btn-primary:hover {
+  background-color: #0c87c3; /* Un poco más oscuro */
+  border-color: #0c87c3;
+}
+.text-primary { color: var(--bs-primary) !important; }
+.text-primary-dark { color: var(--bs-primary-dark) !important; }
+.bg-primary-dark { background-color: var(--bs-primary-dark) !important; }
 
-/* Oculta la barra CTA móvil en pantallas grandes */
-@media (min-width: 576px){
-  .mobile-cta{ display:none; }
+/* --- SECCIÓN HERO (GRADIENTE) --- */
+.hero-gradient {
+  background: linear-gradient(135deg, var(--bs-primary-dark) 0%, var(--bs-primary) 100%);
+  padding-top: 5rem;
+  padding-bottom: 5rem;
 }
 
-
-/* Hero */
-#hero{ background:#f8fafc; }
-
-/* ✅ MODIFICADO: Se ajustó el tamaño del título para móviles */
-@media (max-width:576px){
-  .display-5{ font-size:1.75rem; line-height:1.2; } /* Se redujo de 1.9rem a 1.75rem */
-  .lead{ font-size:1rem; }
-  #hero .btn-lg{ padding:.8rem 1rem; font-size:1rem; }
-  .navbar-brand{ font-size:1rem; max-width:70%; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+/* --- NAVBAR --- */
+.navbar-toggler {
+  border: none;
+}
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+.nav-link {
+  color: #475569;
+  font-weight: 500;
+}
+.nav-link:hover, .nav-link:focus {
+  color: var(--bs-primary);
 }
 
-/* Cards e imágenes */
-.card{ border:0; border-radius:1rem; }
-img.rounded-3{ border-radius:1rem!important; }
-
-/* CTA móvil inferior */
-.mobile-cta{
-  position:fixed; bottom:0; left:0; right:0;
-  display:flex; gap:.5rem; padding:.5rem .75rem;
-  background:rgba(255,255,255,.95);
-  border-top:1px solid #e5e7eb; z-index:1050;
+/* --- TARJETAS DE SERVICIO --- */
+.service-card {
+  border: none;
+  border-radius: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.mobile-cta .btn{ padding:.8rem 1rem; border-radius:.9rem; font-weight:600; }
-
-/* Botón flotante WhatsApp (≥ sm) */
-.fab-whatsapp{
-  position:fixed; right:18px; bottom:18px;
-  width:56px; height:56px; border-radius:50%;
-  background:#25D366; color:#fff; font-size:14px; font-weight:700;
-  display:flex; align-items:center; justify-content:center; text-decoration:none;
-  box-shadow:0 6px 20px rgba(37,211,102,.4); z-index:1050;
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.07);
 }
 
-/* Evitar que la barra móvil tape el footer */
-@media (max-width:576px){ body{ padding-bottom:76px; } }
-
-/* Accesibilidad */
-a:focus,button:focus,.btn:focus{ outline:2px solid #0d6efd; outline-offset:2px; }
-
-/* Badges clientes */
-.badge.text-bg-light{ border:1px solid #e5e7eb; border-radius:.8rem; }
-
-
-/* --- NUEVO: Micro-interacciones y mejoras visuales --- */
-
-/* Transición suave para elementos interactivos */
-.btn, .nav-link, .card, .fab-whatsapp {
-  transition: all 0.3s ease-in-out;
+/* ✅ ESTILOS DE ÍCONOS CORREGIDOS */
+.icon-circle {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: inline-block; /* Cambiado para que la imagen se ajuste bien */
+  overflow: hidden; /* Oculta las esquinas de la imagen */
+  background-color: #e0f2fe; /* Mantenemos un fondo por si la imagen no carga */
 }
 
-/* Efecto al pasar el cursor sobre botones y enlaces del menú */
-.btn:hover, .nav-link:hover {
-  transform: translateY(-2px); /* Mueve el elemento ligeramente hacia arriba */
+.icon-circle img {
+  width: 100%; /* La imagen ocupa todo el ancho del círculo */
+  height: 100%; /* La imagen ocupa toda la altura del círculo */
+  object-fit: cover; /* Asegura que la imagen cubra el área sin deformarse */
 }
 
-/* Efecto hover para las tarjetas */
-.card:hover {
-  transform: scale(1.03); /* Hace la tarjeta un poco más grande */
-  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15) !important;
+/* --- TESTIMONIOS --- */
+.testimonial-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    padding: 2rem;
+    height: 100%;
 }
 
-/* Efecto hover para el botón de WhatsApp */
+/* --- FORMULARIO DE CONTACTO --- */
+.form-control:focus {
+  border-color: var(--bs-primary);
+  box-shadow: 0 0 0 0.25rem rgba(14, 165, 233, 0.25);
+}
+
+/* --- FOOTER --- */
+footer {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+/* --- BOTONES DE CONTACTO --- */
+.fab-whatsapp {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: var(--bs-success);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 1050;
+  transition: transform 0.3s ease;
+}
 .fab-whatsapp:hover {
-    transform: scale(1.1);
-    box-shadow: 0 8px 25px rgba(37,211,102,.5);
+  transform: scale(1.1);
 }
 
-/* Mejora de contraste para accesibilidad */
-.text-muted {
-  color: #6c757d !important; /* Un gris estándar con buen contraste */
+.mobile-cta {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(5px);
+  border-top: 1px solid #e5e7eb;
+  z-index: 1050;
+}
+.mobile-cta .btn {
+  padding: 0.8rem 1rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body {
+  padding-bottom: 90px;
+}
+@media (min-width: 576px) {
+  body {
+    padding-bottom: 0;
+  }
+}
+
+/* --- OPTIMIZACIONES PARA VISTA MÓVIL --- */
+@media (max-width: 767px) {
+  .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  
+  .navbar-brand .fw-bold {
+    font-size: 1.1rem; 
+  }
+
+  .display-4 {
+    font-size: 2.25rem;
+    line-height: 1.2;
+  }
+
+  #hero .lead {
+    font-size: 1.1rem;
+  }
+  
+  .py-5 {
+    padding-top: 3.5rem !important;
+    padding-bottom: 3.5rem !important;
+  }
+
+  .h1 {
+      font-size: 1.75rem;
+  }
+
+  #hero .btn-lg {
+    font-size: 0.9rem;
+    padding: 0.75rem 1.25rem;
+  }
+
+  .testimonial-card {
+      padding: 1.5rem;
+  }
+}
+
+/* --- ARREGLO PARA PANTALLAS MUY ANGOSTAS --- */
+@media (max-width: 375px) {
+  .mobile-cta {
+    padding: 0.5rem;
+    gap: 0.25rem;
+  }
+  .mobile-cta .btn {
+    padding: 0.75rem 0.5rem;
+    font-size: 0.85rem;
+  }
+  
+  .navbar-brand .fw-bold {
+    font-size: 1rem;
+  }
 }
