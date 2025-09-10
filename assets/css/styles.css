@@ -10,7 +10,8 @@
 }
 
 /* --- ESTILOS GENERALES --- */
-body {
+/* ✅ NUEVO: Regla para forzar el ajuste a la pantalla */
+html, body {
   scroll-behavior: smooth;
   overflow-x: hidden; /* Previene el scroll horizontal accidental */
 }
@@ -60,20 +61,18 @@ body {
   box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.07);
 }
 
-/* ✅ ESTILOS DE ÍCONOS CORREGIDOS */
 .icon-circle {
   width: 70px;
   height: 70px;
   border-radius: 50%;
-  display: inline-block; /* Cambiado para que la imagen se ajuste bien */
-  overflow: hidden; /* Oculta las esquinas de la imagen */
-  background-color: #e0f2fe; /* Mantenemos un fondo por si la imagen no carga */
+  display: inline-block;
+  overflow: hidden;
+  background-color: #e0f2fe;
 }
-
 .icon-circle img {
-  width: 100%; /* La imagen ocupa todo el ancho del círculo */
-  height: 100%; /* La imagen ocupa toda la altura del círculo */
-  object-fit: cover; /* Asegura que la imagen cubra el área sin deformarse */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* --- TESTIMONIOS --- */
@@ -130,6 +129,7 @@ footer {
   backdrop-filter: blur(5px);
   border-top: 1px solid #e5e7eb;
   z-index: 1050;
+  width: 100%; /* Asegura que la barra ocupe el 100% del ancho */
 }
 .mobile-cta .btn {
   padding: 0.8rem 1rem;
