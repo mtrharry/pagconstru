@@ -1,100 +1,267 @@
+/* --- GOOGLE FONTS --- */
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=Rubik:wght@400;500&display=swap');
+
 /* --- PALETA DE COLORES Y VARIABLES --- */
 :root {
-  --bs-primary: #0ea5e9;      /* Azul claro principal (cielo) */
-  --bs-primary-dark: #1e3a8a; /* Azul oscuro (noche) */
-  --bs-light: #f8fafc;        /* Fondo claro (casi blanco) */
-  --bs-dark: #334155;         /* Texto oscuro */
-  --bs-success: #198754;      /* Verde para WhatsApp */
-  --bs-body-font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --bs-body-color: var(--bs-dark);
+  --primary-color: #f57e20; /* Naranja principal */
+  --secondary-color: #1e293b; /* Azul oscuro/Carbón */
+  --success-color: #25d366; /* Verde WhatsApp */
+  --light-gray-color: #f8f9fa;
+  --text-color: #4a4a4a;
+  --heading-color: #1e293b;
+  --font-heading: 'Rajdhani', sans-serif;
+  --font-body: 'Rubik', sans-serif;
 }
 
 /* --- ESTILOS GENERALES --- */
-html, body {
-  scroll-behavior: smooth;
-  overflow-x: hidden; /* Previene el scroll horizontal accidental */
+body {
+  font-family: var(--font-body);
+  color: var(--text-color);
+  line-height: 1.7;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--heading-color);
+}
+
+.section-subtitle {
+  color: var(--primary-color);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
 }
 
 .btn-primary {
-  background-color: var(--bs-primary);
-  border-color: var(--bs-primary);
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  padding: 12px 30px;
+  font-weight: 600;
+  text-transform: uppercase;
 }
 .btn-primary:hover {
-  background-color: #0c87c3; /* Un poco más oscuro */
-  border-color: #0c87c3;
+  background-color: #d86e1a;
+  border-color: #d86e1a;
 }
-.text-primary { color: var(--bs-primary) !important; }
-.text-primary-dark { color: var(--bs-primary-dark) !important; }
-.bg-primary-dark { background-color: var(--bs-primary-dark) !important; }
-
-/* --- SECCIÓN HERO (GRADIENTE) --- */
-.hero-gradient {
-  background: linear-gradient(135deg, var(--bs-primary-dark) 0%, var(--bs-primary) 100%);
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+.btn-outline-light {
+    padding: 12px 30px;
+    font-weight: 600;
+    text-transform: uppercase;
 }
-
-/* --- NAVBAR --- */
-.navbar-toggler {
-  border: none;
-}
-.navbar-toggler:focus {
-  box-shadow: none;
-}
-.nav-link {
-  color: #475569;
-  font-weight: 500;
-}
-.nav-link:hover, .nav-link:focus {
-  color: var(--bs-primary);
+.btn-success {
+    background-color: var(--success-color);
+    border-color: var(--success-color);
 }
 
-/* --- TARJETAS DE SERVICIO --- */
-.service-card {
-  border: none;
-  border-radius: 1rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+/* --- HEADER --- */
+.header-top {
+  background-color: var(--secondary-color);
+  padding: 0.5rem 0;
+  font-size: 0.85rem;
 }
-.service-card:hover {
+.header-top a {
+  color: #ffffff;
+  text-decoration: none;
+  margin: 0 0.75rem; /* Margen horizontal para espaciar */
+  transition: opacity 0.3s;
+}
+.header-top a:hover {
+  opacity: 0.8;
+}
+.header-top .social-icons a {
+  margin: 0 0.5rem;
+}
+.navbar-brand {
+  color: var(--heading-color) !important;
+  font-size: 1.2rem;
+}
+.navbar .nav-link {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--heading-color);
+  margin: 0 0.5rem;
+}
+.navbar .nav-link:hover {
+  color: var(--primary-color);
+}
+
+.logo-img {
+  height: 40px; 
+  margin-right: 10px;
+}
+
+/* --- HERO SECTION --- */
+#hero {
+  background: url('../img/proyectos/cortes_pavimentos.jpg') no-repeat center center/cover;
+  min-height: 80vh;
+  position: relative;
+  color: #fff; 
+}
+#hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(30, 41, 59, 0.7);
+}
+#hero .container {
+  position: relative;
+  z-index: 2;
+}
+#hero h1 {
+    color: #fff;
+}
+
+/* --- SERVICIOS SECTION --- */
+.service-box {
+  background-color: var(--light-gray-color);
+  padding: 30px;
+  text-align: center;
+  border: 1px solid #e9ecef;
+  transition: all 0.3s ease;
+  height: 100%;
+}
+.service-box:hover {
   transform: translateY(-10px);
-  box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.07);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  border-color: var(--primary-color);
 }
-
-.icon-circle {
+.service-icon {
+  background-color: var(--primary-color);
+  color: #fff;
   width: 70px;
   height: 70px;
+  line-height: 70px;
+  font-size: 2rem;
   border-radius: 50%;
-  display: inline-block;
-  overflow: hidden;
-  background-color: #e0f2fe;
+  margin: 0 auto 20px auto;
 }
-.icon-circle img {
-  width: 100%;
+.service-title {
+  color: var(--primary-color);
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+/* --- PROYECTOS SECTION --- */
+.project-image {
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  transition: transform 0.3s;
   height: 100%;
   object-fit: cover;
 }
-
-/* --- TESTIMONIOS --- */
-.testimonial-card {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 1rem;
-    padding: 2rem;
-    height: 100%;
+.project-image:hover {
+    transform: scale(1.05);
 }
 
-/* --- FORMULARIO DE CONTACTO --- */
-.form-control:focus {
-  border-color: var(--bs-primary);
-  box-shadow: 0 0 0 0.25rem rgba(14, 165, 233, 0.25);
+
+/* --- TESTIMONIOS SECTION --- */
+.testimonials-section {
+  background: linear-gradient(rgba(30, 41, 59, 0.8), rgba(30, 41, 59, 0.8)), url('../img/hero-vereda.jpeg') no-repeat center center/cover;
+  color: #fff;
+}
+.testimonial-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 8px;
+}
+.testimonial-card p {
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+.testimonial-card cite {
+    font-weight: 600;
+    font-style: normal;
+    color: var(--primary-color);
+}
+
+
+/* --- CONTACTO SECTION --- */
+.contact-form .form-control {
+    border-radius: 0;
+    padding: 1rem;
+    border: 1px solid #ddd;
+}
+.contact-form .form-control:focus {
+    box-shadow: none;
+    border-color: var(--primary-color);
+}
+.contact-bg-image {
+    background: url('../img/proyectos/Poniendosoleras.jpg') no-repeat center center/cover;
+    min-height: 400px;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 2rem;
+}
+.contact-info-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(30, 41, 59, 0.8);
+    color: #fff;
+    padding: 2rem;
+}
+.contact-info-overlay h4 {
+    color: #fff;
+    font-size: 1.1rem;
+}
+.contact-info-overlay i {
+    color: var(--primary-color);
+    margin-right: 10px;
 }
 
 /* --- FOOTER --- */
-footer {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+.footer-section {
+  background-color: var(--secondary-color);
+  color: #adb5bd;
+  padding-top: 4rem;
+}
+.footer-logo-img {
+    max-width: 200px;
+    margin-bottom: 1rem;
+}
+.footer-title {
+  color: #fff;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+.footer-links li {
+  margin-bottom: 0.75rem;
+}
+.footer-links a, .footer-links li {
+  color: #adb5bd;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.footer-links a:hover {
+  color: #fff;
+}
+.footer-bottom {
+  border-top: 1px solid #343a40;
+  text-align: center;
+  padding: 1.5rem 0;
+  margin-top: 2rem;
+}
+.footer-bottom p {
+  margin: 0;
+  font-size: 0.9rem;
 }
 
-/* --- BOTONES DE CONTACTO --- */
+/* --- BOTONES DE CONTACTO FLOTANTES --- */
 .fab-whatsapp {
   position: fixed;
   right: 20px;
@@ -102,18 +269,20 @@ footer {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background-color: var(--bs-success);
+  background-color: var(--success-color);
   color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  z-index: 1050;
+  z-index: 1000;
   transition: transform 0.3s ease;
+  font-size: 2rem;
 }
 .fab-whatsapp:hover {
   transform: scale(1.1);
+  color: #fff;
 }
 
 .mobile-cta {
@@ -124,19 +293,14 @@ footer {
   display: flex;
   gap: 0.5rem;
   padding: 0.75rem;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(5px);
+  background: rgba(255, 255, 255, 0.98);
   border-top: 1px solid #e5e7eb;
-  z-index: 1050;
+  z-index: 1000;
   width: 100%;
 }
 .mobile-cta .btn {
   padding: 0.8rem 1rem;
-  border-radius: 0.75rem;
   font-weight: 600;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 body {
@@ -148,70 +312,62 @@ body {
   }
 }
 
-/* --- GALERÍA DE PROYECTOS --- */
-.project-carousel .carousel-item img {
-  /* ✅ TAMAÑO MODIFICADO */
-  height: 970px; /* Altura estándar para escritorio */
-  object-fit: cover;
-  width: 100%;
-  border-radius: 0.5rem;
-}
-
-/* --- OPTIMIZACIONES PARA VISTA MÓVIL --- */
-@media (max-width: 767px) {
-  .container {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-  
-  .navbar-brand .fw-bold {
-    font-size: 1.1rem; 
-  }
-
-  .display-4 {
-    font-size: 2.25rem;
+/* --- RESPONSIVE FIXES --- */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2.2rem;
     line-height: 1.2;
   }
+  
+  /* ✅ AJUSTE FINAL MÓVIL: Encabezado superior en una línea */
+  .header-top .container {
+    flex-direction: row; /* Cambiado a fila */
+    flex-wrap: wrap;     /* Permite que los elementos pasen a la siguiente línea si no caben */
+    justify-content: center;
+  }
+  .header-top .contact-info, .header-top .social-icons {
+      width: auto; /* Ancho automático para que se ajusten al contenido */
+      margin-bottom: 0;
+  }
 
-  #hero .lead {
-    font-size: 1.1rem;
+  /* Arreglo para el Hero */
+  #hero {
+    min-height: 70vh;
+  }
+  #hero h1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
   }
   
-  .py-5 {
-    padding-top: 3.5rem !important;
-    padding-bottom: 3.5rem !important;
+  /* ✅ AJUSTE FINAL MÓVIL: Botones del banner apilados y con espacio */
+  #hero div[data-aos="fade-up"] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem; /* Espacio entre los botones */
+  }
+  #hero div[data-aos="fade-up"] .btn {
+    width: 80%; /* Ancho consistente para ambos botones */
+    margin: 0;
   }
 
-  .h1 {
-      font-size: 1.75rem;
-  }
 
-  #hero .btn-lg {
-    font-size: 0.9rem;
-    padding: 0.75rem 1.25rem;
+  /* Ajustes generales */
+  section {
+      padding-top: 3rem !important;
+      padding-bottom: 3rem !important;
   }
-
-  .testimonial-card {
-      padding: 1.5rem;
+  .navbar-brand {
+    font-size: 1rem;
   }
-
-  .project-carousel .carousel-item img {
-    height: 250px;
+  .logo-img {
+    height: 35px;
   }
 }
 
-/* --- ARREGLO PARA PANTALLAS MUY ANGOSTAS --- */
-@media (max-width: 375px) {
-  .mobile-cta {
-    padding: 0.5rem;
-    gap: 0.25rem;
-  }
-  .mobile-cta .btn {
-    padding: 0.75rem 0.5rem;
-    font-size: 0.85rem;
-  }
-  
-  .navbar-brand .fw-bold {
-    font-size: 1rem;
-  }
+@media (max-width: 576px) {
+    .header-top a {
+        margin: 0 0.5rem;
+        font-size: 0.8rem; /* Reducir un poco la fuente si es necesario */
+    }
 }
