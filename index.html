@@ -237,7 +237,7 @@
     const clave = new URLSearchParams(window.location.search).get('admin');
     if (clave !== 'elpepe9832') return; 
     try {
-      const res = await fetch('https://api.countapi.xyz/get/construccionesmichaelruiz.com/visitas');
+      const res = await fetch('https://api.counterapi.dev/v1/first-counter-1522/hit');
       const data = await res.json();
       alert(`👀 Total de visitas: ${data.value}`);
     } catch (error) {
