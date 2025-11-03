@@ -233,8 +233,10 @@
   document.getElementById('year').textContent = new Date().getFullYear();
 
   // 👉 Cada vez que alguien entra, incrementa el contador en tu cuenta
-  fetch('https://api.counterapi.dev/v1/mtrharry/first-counter-1522/hit')
-    .catch(err => console.error('Error al registrar visita:', err));
+  fetch('https://api.counterapi.dev/v1/default/first-counter-1522/hit')
+  .then(r => r.json())
+  .then(d => console.log('✅ Contador actualizado:', d))
+  .catch(err => console.error('❌ Error al registrar visita:', err));
   </script>
 </body>
 </html>
