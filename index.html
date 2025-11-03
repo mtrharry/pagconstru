@@ -231,6 +231,20 @@
       once: true
     });
     document.getElementById('year').textContent = new Date().getFullYear();
+
+
+     async function contarVisitasPrivadas() {
+    const clave = new URLSearchParams(window.location.search).get('admin');
+    if (clave !== 'elpepe9832') return; 
+    try {
+      const res = await fetch('https://api.countapi.xyz/get/construccionesmichaelruiz.com/visitas');
+      const data = await res.json();
+      alert(`👀 Total de visitas: ${data.value}`);
+    } catch (error) {
+      alert('Error al obtener las visitas');
+    }
+  }
+  contarVisitasPrivadas();
   </script>
 </body>
 </html>
