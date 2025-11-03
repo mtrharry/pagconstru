@@ -227,23 +227,28 @@
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init({
-      duration: 800,
-      once: true
-    });
-    document.getElementById('year').textContent = new Date().getFullYear();
+    duration: 800,
+    once: true
+  });
+  document.getElementById('year').textContent = new Date().getFullYear();
 
-
-     async function contarVisitasPrivadas() {
+  async function contarVisitasPrivadas() {
     const clave = new URLSearchParams(window.location.search).get('admin');
-    if (clave !== 'elpepe9832') return; 
+    if (clave !== 'elpepe9832') return; // Solo tú puedes verlo
+    
     try {
-      const res = await fetch('https://api.counterapi.dev/v1/first-counter-1522/hit');
+      // Llama al endpoint correcto de CounterAPI
+      const res = await fetch('https://api.counterapi.dev/v1/mtrharry/first-counter-1522/hit');
       const data = await res.json();
-      alert(`👀 Total de visitas: ${data.value}`);
+
+      // La propiedad correcta en CounterAPI es "count", no "value"
+      alert(`👀 Total de visitas: ${data.count}`);
     } catch (error) {
+      console.error(error);
       alert('Error al obtener las visitas');
     }
   }
+
   contarVisitasPrivadas();
   </script>
 </body>
