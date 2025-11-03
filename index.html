@@ -226,30 +226,15 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    AOS.init({
+     AOS.init({
     duration: 800,
     once: true
   });
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  async function contarVisitasPrivadas() {
-    const clave = new URLSearchParams(window.location.search).get('admin');
-    if (clave !== 'elpepe9832') return; // Solo tú puedes verlo
-    
-    try {
-      // Llama al endpoint correcto de CounterAPI
-      const res = await fetch('https://api.counterapi.dev/v1/mtrharry/first-counter-1522/hit');
-      const data = await res.json();
-
-      // La propiedad correcta en CounterAPI es "count", no "value"
-      alert(`👀 Total de visitas: ${data.count}`);
-    } catch (error) {
-      console.error(error);
-      alert('Error al obtener las visitas');
-    }
-  }
-
-  contarVisitasPrivadas();
+  // 👉 Cada vez que alguien entra, incrementa el contador en tu cuenta
+  fetch('https://api.counterapi.dev/v1/mtrharry/first-counter-1522/hit')
+    .catch(err => console.error('Error al registrar visita:', err));
   </script>
 </body>
 </html>
