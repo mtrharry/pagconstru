@@ -226,17 +226,12 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-  // Contador de visitas automático
-  fetch("https://api.counterapi.dev/v2/mtrharrys-team-1522/first-counter-1522/up", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    }
-  })
+fetch("https://api.counterapi.dev/v1/mtrharrys-team-1522/first-counter-1522/hit")
   .then(r => r.json())
   .then(d => console.log("✅ Visita registrada:", d))
   .catch(err => console.error("❌ Error al registrar visita:", err));
 </script>
+
 
 </body>
 </html>
